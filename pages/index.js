@@ -2,7 +2,7 @@ import React from 'react'
 import{ useSelector, useDispatch} from "react-redux"
 import { decrementCounter, incrementCounter, resetCounter } from '../components/services/actions/counterAction'
 
-const index = () => {
+const Index = () => {
     const count = useSelector((state) => state.count)
     // console.log(count)
     const dispatch = useDispatch()
@@ -26,4 +26,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
