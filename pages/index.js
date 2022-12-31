@@ -1,27 +1,34 @@
 import React from 'react'
 import{ useSelector, useDispatch} from "react-redux"
 import { decrementCounter, incrementCounter, resetCounter } from '../components/services/actions/counterAction'
+import { getAllTodos } from '../components/services/actions/todosAction'
 
 const Index = () => {
-    const count = useSelector((state) => state.count)
-    // console.log(count)
+    const {isLoading, todos, error} = useSelector((state) => state)
+    console.log(todos)
     const dispatch = useDispatch()
     const handleIncrement = () =>{
-        dispatch(incrementCounter())  
-    }
-    const handlederement = () =>{
-        dispatch(decrementCounter())
-    }
-    const handleReset = () => {
-        dispatch(resetCounter())
+        dispatch(getAllTodos())  
     }
   return (
     <div >
-        <h1>React Redux Counter</h1>
-        <h2>Count is : {count}</h2>
-        <button onClick={handleIncrement}> <h3>Increment</h3> </button>
-        <button onClick={handlederement}> <h3>Decrement</h3> </button>
-        <button onClick={handleReset}> <h3>Reset</h3> </button>
+        <h1>Todos App</h1>
+        {
+            isLoading ? (
+                <h4>Loading...........</h4>
+            ): null
+        }
+        {
+            error ? (
+                <h4>{error}</h4>
+            ): null
+        }
+        {
+            todos.map((item, index)=>(
+                <p key={index} >{item.title}</p>
+            ))
+        }
+        <button onClick={handleIncrement}> <h3>Fetch</h3> </button>
     </div>
   )
 }
