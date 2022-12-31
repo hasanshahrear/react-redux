@@ -1,18 +1,19 @@
 import React from 'react'
-import{ useSelector, useDispatch} from "react-redux"
-import { decrementCounter, incrementCounter, resetCounter } from '../components/services/actions/counterAction'
-import { getAllTodos } from '../components/services/actions/todosAction'
+// import{ useSelector, useDispatch} from "react-redux"
+import CounterView from '../components/features/counter/CounterView'
+// import { decrementCounter, incrementCounter, resetCounter } from '../components/services/actions/counterAction'
+// import { getAllTodos } from '../components/services/actions/todosAction'
 
 const Index = () => {
-    const {isLoading, todos, error} = useSelector((state) => state)
-    console.log(todos)
-    const dispatch = useDispatch()
-    const handleIncrement = () =>{
-        dispatch(getAllTodos())  
-    }
+    // const {isLoading, todos, error} = useSelector((state) => state)
+    // console.log(todos)
+    // const dispatch = useDispatch()
+    // const handleIncrement = () =>{
+    //     dispatch(getAllTodos())  
+    // }
   return (
     <div >
-        <h1>Todos App</h1>
+        {/* <h1>Todos App</h1>
         {
             isLoading ? (
                 <h4>Loading...........</h4>
@@ -28,7 +29,10 @@ const Index = () => {
                 <p key={index} >{item.title}</p>
             ))
         }
-        <button onClick={handleIncrement}> <h3>Fetch</h3> </button>
+        <button onClick={handleIncrement}> <h3>Fetch</h3> </button> */}
+    
+
+    <CounterView />
     </div>
   )
 }

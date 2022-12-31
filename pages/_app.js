@@ -1,6 +1,7 @@
-import store from '../components/services/store'
+
 import '../styles/globals.css'
 import { Provider } from 'react-redux'
+import store from '../components/app/store'
 
 export default function App({ Component, pageProps }) {
   return(
