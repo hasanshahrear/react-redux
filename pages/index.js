@@ -1,6 +1,7 @@
 import React from 'react'
 // import{ useSelector, useDispatch} from "react-redux"
 import CounterView from '../components/features/counter/CounterView'
+import PostView from '../components/features/posts/postView'
 // import { decrementCounter, incrementCounter, resetCounter } from '../components/services/actions/counterAction'
 // import { getAllTodos } from '../components/services/actions/todosAction'
 
@@ -32,7 +33,8 @@ const Index = () => {
         <button onClick={handleIncrement}> <h3>Fetch</h3> </button> */}
     
 
-    <CounterView />
+        <CounterView />
+        <PostView />
     </div>
   )
 }
